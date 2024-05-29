@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav ul li a');
 
     navLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
 
             window.scrollTo({
@@ -13,4 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Add any other interactive JavaScript here
 });
